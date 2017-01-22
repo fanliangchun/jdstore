@@ -1,7 +1,7 @@
 <h1> Product List </h1>
 
 <div class="pull-right">
-	<%= link_to("Add New Product", new_admin_product_path, :class => "btn btn-default") %>
+	<%= link_to("Add New Product", new_admin_product_path, :class => "btn btn-primary") %>
 </div>
 
 <br><br>
@@ -12,6 +12,7 @@
 		<tr>
 			<thead>
 				<th>#</th>
+				<th width="220">商品图示</th>
 				<th>品名</th>
 				<th>描述</th>
 				<th>库存</th>
@@ -21,11 +22,20 @@
 			</thead>
 		</tr>
 	</thead>
-	<% @products.each_with_index do |product, index| %>
-		
+	
 	<tbody>
+	<% @products.each do |product| %>
 		<tr>
-			<td>#</td>
+			<td><%= product.id %></td>
+			<td>
+				<%= link_to admin_product_path(product) do %>
+					<% if product.image.present? %>
+						<%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+					<% else %>
+						<%= image_tag("http://placehold.it/200x200&text=No Picture", class: "thumbnail") %>
+					<% end %>
+				<% end %>
+			</td>
 			<td><%= link_to(product.title, admin_product_path(product)) %></td>
 			<td><%= product.description %></td>
 			<td><%= product.quantity %></td>
