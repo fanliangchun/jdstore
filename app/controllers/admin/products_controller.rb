@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
 
 	before_action :authenticate_user!
 	before_action :admin_required
-
+	layout "admin"
 	before_action :find_products, only: [:show, :edit, :update, :destroy]
 
 	def show
