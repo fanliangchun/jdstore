@@ -68,3 +68,37 @@
   .fa {
   	color: #D43F3A;
   }
+
+  /* Search */
+
+  #search-id {
+    width: 250px;
+    padding-top: 8px;
+    text-align: center;
+  }
+
+  .products-show0 {
+  border-bottom: 1px dotted #CCC;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+}
+
+.products-show {
+  border-bottom: 1px dotted #CCC;
+  padding: 15px;
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Search.html.erb
+*/
+
+.search-info-title {
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+  color: #D43F3A;
+  font-size: 20px;
+  text-align: center;
+}

@@ -27,6 +27,11 @@ gem 'aasm'
 gem 'figaro'
 gem 'fog'
 gem 'airbrake', '~> 5.4'
+gem 'ransack'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'seo_helper'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

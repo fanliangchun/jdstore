@@ -1,0 +1,31 @@
+<div>
+  <br>
+  <% if @products.blank? %>
+    <br>
+    <h2 class="search-info-title">Please Search Key Words...</h2>
+  <% else %>
+    <h2 class="search-info-title"> About"<%= @query_string %>" </h2>
+    <div class="search-result">
+
+      <div class="row products-show0"></div>
+      <div class="product-table">
+        <% @products.each do |product| %>
+        <div class="row products-show">
+
+          <div class="col-md-12 col-lg-9 col-lg-offset-1">
+
+            <div class="pull-right">
+              发布时间：<%= product.created_at.to_date %>
+            </div>
+            <p ><%= link_to(render_highlight_content(product,@query_string),product_path(product)) %></p>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+    </div>
+  <% end %>
+</div>
