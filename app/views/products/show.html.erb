@@ -8,6 +8,7 @@
 	</div>
 	<div class="col-md-6">
 		<h2> <%= @product.title %></h2>
+		<h4>Category: <%= @product.category.name %></h4>
 		<div style="height: 100px;">
 			<p>
 				<%= simple_format(@product.description) %>

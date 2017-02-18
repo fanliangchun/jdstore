@@ -1,10 +1,24 @@
 <%= simple_form_for [:admin, @product] do |f| %>
+<div class="group">
+	<%= f.input :title %>
+</div>
+<div class="group">
+	<%= f.input :description %>
+</div>
+<div class="group">
+	<%= f.input :quantity %>
+</div>
+<div class="group">
+	<%= f.input :price %>
+</div>
+<div>
+	<%= f.input :image, as: :file %>
+</div>
+<div class="group">
+	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Choose Category") %>
+</div><br>
+<div class="group">
+	<%= f.button :submit %>
+</div>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :quantity %>
-<%= f.input :price %>
-<%= f.input :image, as: :file %>
-
-<%= f.button :submit %>
 <% end -%>

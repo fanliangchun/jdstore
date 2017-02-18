@@ -27,10 +27,11 @@
 				<% end %>	
 			<% end -%>	
 			<div>
-			<h2><%= product.title %></h2> 
-				<p class="price">Price: ￥<%= product.price %></p>
+				<h2><%= product.title %></h2>
+				<h5>Category: <%= product.category.name %></h5> 
+				<h5 class="price">Price: ￥<%= product.price %></h5>
 			 	<span><%= link_to("Add To Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-primary btn-sm btn-danger") %></span>
-		</div>
+			</div>
 		</div>
 	<% end -%>
 </div>
